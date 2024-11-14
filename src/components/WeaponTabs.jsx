@@ -2,6 +2,7 @@ import { skinsData } from '../data';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FixedSizeList as List } from 'react-window';
+import '../Styles/WeaponTabs.css'
 
 export default function WeaponTabs({ onSkinSelect }) {
 	const [activeWeapon, setActiveWeapon] = useState(Object.keys(skinsData)[0]);

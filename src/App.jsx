@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import './Styles/global.css'
 import Header from './components/Header';
 import VPInput from './components/VPInput';
 import WeaponTabs from './components/WeaponTabs';

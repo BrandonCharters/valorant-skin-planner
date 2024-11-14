@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../Styles/VPInput.css'
 
 export default function VPInput({ currentVP, setCurrentVP }) {
 	return (

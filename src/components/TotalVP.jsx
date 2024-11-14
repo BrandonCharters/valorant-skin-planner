@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../Styles/TotalVP.css'
 
 export default function TotalVP({ selectedSkins }) {
 	const totalVP = selectedSkins.reduce((sum, skin) => sum + skin.cost, 0);

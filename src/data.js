@@ -125,7 +125,7 @@ export const skinsData = {
             { id: 112, name: "Switchback Phantom", cost: 875 },
         ],
     },
-    OP: {
+    Operator: {
         image: OperatorBase,
         skins: [
             { id: 113, name: "Elderflame Operator", cost: 2475 },

@@ -1,5 +1,6 @@
 import { bundles } from '../data';
 import PropTypes from 'prop-types';
+import '../Styles/BundleSuggestion.css'
 
 export default function BundleSuggestion({ totalVP, currentVP }) {
 	const vpNeeded = Math.max(totalVP - currentVP, 0);
