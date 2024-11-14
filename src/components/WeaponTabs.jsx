@@ -1,11 +1,11 @@
-import { skinsData } from '../data';
+import { weapons, skins } from '../data';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FixedSizeList as List } from 'react-window';
-import '../Styles/WeaponTabs.css'
+import '../Styles/WeaponTabs.css';
 
 export default function WeaponTabs({ onSkinSelect }) {
-	const [activeWeapon, setActiveWeapon] = useState(Object.keys(skinsData)[0]);
+	const [activeWeaponId, setActiveWeaponId] = useState(weapons[0].id); // Default to the first weapon
 	const [selectedSkins, setSelectedSkins] = useState(new Set());
 
 	const handleSkinSelect = (skin) => {
@@ -19,23 +19,26 @@ export default function WeaponTabs({ onSkinSelect }) {
 		onSkinSelect(Array.from(updatedSkins));
 	};
 
-	const skins = skinsData[activeWeapon].skins;
+	// Filter skins for the active weapon
+	const filteredSkins = skins.filter(
+		(skin) => skin.weaponId === activeWeaponId
+	);
 
 	return (
 		<div>
 			<h2>Weapons</h2>
 			<div className="tabs">
-				{Object.keys(skinsData).map((weapon) => (
+				{weapons.map((weapon) => (
 					<button
-						key={weapon}
-						className={activeWeapon === weapon ? 'active' : ''}
-						onClick={() => setActiveWeapon(weapon)}
+						key={weapon.id}
+						className={activeWeaponId === weapon.id ? 'active' : ''}
+						onClick={() => setActiveWeaponId(weapon.id)}
 					>
 						<div className="tab-content">
-							<h3>{weapon}</h3>
+							<h3>{weapon.name}</h3>
 							<img
-								src={skinsData[weapon].image}
-								alt={`${weapon} base`}
+								src={weapon.image}
+								alt={`${weapon.name} base`}
 								className="weapon-image"
 							/>
 						</div>
@@ -45,13 +48,13 @@ export default function WeaponTabs({ onSkinSelect }) {
 
 			<List
 				className="weapon-list-container"
-				height={400} // Adjust to fit your design
-				itemCount={skins.length}
-				itemSize={50} // Height of each item
+				height={400}
+				itemCount={filteredSkins.length}
+				itemSize={50}
 				width="100%"
 			>
 				{({ index, style }) => {
-					const skin = skins[index];
+					const skin = filteredSkins[index];
 					return (
 						<div key={skin.id} style={style}>
 							<button
