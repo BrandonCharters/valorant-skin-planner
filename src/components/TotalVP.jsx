@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import '../Styles/TotalVP.css'
 import VPIcon from './VPIcon';
 
+// This component calculates and displays the total VP required for the selected skins.
+
 export default function TotalVP({ selectedSkins }) {
 	const totalVP = selectedSkins.reduce((sum, skin) => sum + skin.cost, 0);
 

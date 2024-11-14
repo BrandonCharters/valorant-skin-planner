@@ -2,6 +2,8 @@ import { bundles } from '../data';
 import PropTypes from 'prop-types';
 import '../Styles/BundleSuggestion.css'
 
+// This component calculates and displays the best bundles to meet the VP requirement.
+
 export default function BundleSuggestion({ totalVP, currentVP }) {
 	const vpNeeded = Math.max(totalVP - currentVP, 0);
 

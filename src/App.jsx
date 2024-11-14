@@ -7,6 +7,9 @@ import WeaponTabs from './components/WeaponTabs';
 import TotalVP from './components/TotalVP';
 import BundleSuggestion from './components/BundleSuggestion';
 
+// This is the main component of the app, functioning as the central controller for other components. 
+// It initializes and manages the app's primary state.
+
 export default function App() {
 	const [currentVP, setCurrentVP] = useState(0);
 	const [selectedSkins, setSelectedSkins] = useState([]);

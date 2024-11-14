@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import '../Styles/VPInput.css'
 import VPIcon from './VPIcon';
 
+// This component allows users to input their current VP balance and handles updates to the state.
+
 export default function VPInput({ currentVP, setCurrentVP }) {
 	return (
 		<div className="vp-input-container">
@@ -17,7 +19,8 @@ export default function VPInput({ currentVP, setCurrentVP }) {
 	);
 }
 
+// These aren't needed but ESLint gets mad if you ont have them.
 VPInput.propTypes = {
-	currentVP: PropTypes.number.isRequired,
-	setCurrentVP: PropTypes.func.isRequired,
+	currentVP: PropTypes.number.isRequired, // Ensures `currentVP` is a number
+	setCurrentVP: PropTypes.func.isRequired, // // Ensures `setCurrentVP` is a function
 };

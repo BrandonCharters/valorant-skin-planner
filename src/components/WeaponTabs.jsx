@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import { FixedSizeList as List } from 'react-window';
 import '../Styles/WeaponTabs.css';
 
+// This component displays a list of weapons as tabs and allows users to select skins.
+
 export default function WeaponTabs({ onSkinSelect }) {
-	const [activeWeaponId, setActiveWeaponId] = useState(weapons[0].id); // Default to the first weapon
+	const [activeWeaponId, setActiveWeaponId] = useState(weapons[0].id);
 	const [selectedSkins, setSelectedSkins] = useState(new Set());
 
 	const handleSkinSelect = (skin) => {
