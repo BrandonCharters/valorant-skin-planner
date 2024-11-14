@@ -7,7 +7,7 @@ import WeaponTabs from './components/WeaponTabs';
 import TotalVP from './components/TotalVP';
 import BundleSuggestion from './components/BundleSuggestion';
 
-function App() {
+export default function App() {
 	const [currentVP, setCurrentVP] = useState(0);
 	const [selectedSkins, setSelectedSkins] = useState([]);
 
@@ -23,5 +23,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
