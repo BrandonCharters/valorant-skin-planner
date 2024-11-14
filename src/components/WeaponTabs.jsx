@@ -53,14 +53,14 @@ export default function WeaponTabs({ onSkinSelect }) {
 					const skin = skins[index];
 					return (
 						<div key={skin.id} style={style}>
-							<label>
-								<input
-									type="checkbox"
-									checked={selectedSkins.has(skin)}
-									onChange={() => handleSkinSelect(skin)}
-								/>
+							<button
+								className={`skin-button ${
+									selectedSkins.has(skin) ? 'selected' : ''
+								}`}
+								onClick={() => handleSkinSelect(skin)}
+							>
 								{skin.name} - {skin.cost} VP
-							</label>
+							</button>
 						</div>
 					);
 				}}

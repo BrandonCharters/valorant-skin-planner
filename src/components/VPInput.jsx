@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 
 export default function VPInput({ currentVP, setCurrentVP }) {
 	return (
-		<div>
+		<div className="vp-input-container">
 			<h2>Current VP</h2>
 			<input
-				type="number"
-				value={currentVP}
-				onChange={(e) => setCurrentVP(Number(e.target.value))}
+				type="text"
+				className="vp-input"
+				value={currentVP || ''}
+				onChange={(e) => setCurrentVP(Number(e.target.value) || 0)}
 				placeholder="Enter your current VP balance"
 			/>
 		</div>
