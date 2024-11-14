@@ -7,9 +7,11 @@ import '../Styles/WeaponTabs.css';
 // This component displays a list of weapons as tabs and allows users to select skins.
 
 export default function WeaponTabs({ onSkinSelect }) {
+    // Local state for the active weapon and selected skins.
 	const [activeWeaponId, setActiveWeaponId] = useState(weapons[0].id);
 	const [selectedSkins, setSelectedSkins] = useState(new Set());
 
+    // Handles toggling skin selection.
 	const handleSkinSelect = (skin) => {
 		const updatedSkins = new Set(selectedSkins);
 		if (updatedSkins.has(skin)) {
@@ -17,15 +19,16 @@ export default function WeaponTabs({ onSkinSelect }) {
 		} else {
 			updatedSkins.add(skin);
 		}
-		setSelectedSkins(updatedSkins);
-		onSkinSelect(Array.from(updatedSkins));
+		setSelectedSkins(updatedSkins); // Update local state.
+		onSkinSelect(Array.from(updatedSkins)); // Notify parent of changes.
 	};
 
-	// Filter skins for the active weapon
+	// Filters skins based on the active weapon ID.
 	const filteredSkins = skins.filter(
 		(skin) => skin.weaponId === activeWeaponId
 	);
 
+    // React enables efficient rendering of the UI, ensuring performance even with large data sets.
 	return (
 		<div>
 			<h2>Weapons</h2>
@@ -48,6 +51,7 @@ export default function WeaponTabs({ onSkinSelect }) {
 				))}
 			</div>
 
+            {/* `react-window` optimizes the rendering of long lists */}
 			<List
 				className="weapon-list-container"
 				height={400}

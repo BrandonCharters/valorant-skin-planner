@@ -5,18 +5,22 @@ import '../Styles/BundleSuggestion.css'
 // This component calculates and displays the best bundles to meet the VP requirement.
 
 export default function BundleSuggestion({ totalVP, currentVP }) {
+
+    // React calculates the VP needed dynamically using props.
 	const vpNeeded = Math.max(totalVP - currentVP, 0);
 
+    // Encapsulated logic for calculating the best bundles (reusable and testable).
 	const calculateBestBundles = (vpNeeded) => {
-		const memo = {};
+		const memo = {}; // React benefits by allowing local memoization, reducing recalculations.
 
 		const findCombination = (remainingVP) => {
 			if (remainingVP <= 0) return { cost: 0, bundles: [] };
-			if (memo[remainingVP]) return memo[remainingVP];
+			if (memo[remainingVP]) return memo[remainingVP]; // Use memoized result if available.
 
 			let minCost = Infinity;
 			let bestCombination = [];
 
+            // Loop through bundles to find the best cost combination.
 			for (const bundle of bundles) {
 				const result = findCombination(remainingVP - bundle.totalVP);
 				const currentCost = result.cost + bundle.cost;
@@ -27,18 +31,20 @@ export default function BundleSuggestion({ totalVP, currentVP }) {
 				}
 			}
 
+            // Store result in memo for optimization.
 			memo[remainingVP] = { cost: minCost, bundles: bestCombination };
 			return memo[remainingVP];
 		};
 
-		// Ensure we start from the exact VP needed
+		// Start calculation from the exact VP needed.
 		const result = findCombination(vpNeeded);
 		return {
-			minCost: isFinite(result.cost) ? result.cost : 0, // Fallback to 0 cost if no bundles are found
+			minCost: isFinite(result.cost) ? result.cost : 0, // Fallback to 0 cost if no bundles are found.
 			bestCombination: result.bundles,
 		};
 	};
 
+    // Helper function to group bundles by ID for cleaner UI display.
 	const groupBundles = (bundles) => {
 		const grouped = {};
 		bundles.forEach((bundle) => {
@@ -54,6 +60,7 @@ export default function BundleSuggestion({ totalVP, currentVP }) {
 	const { minCost, bestCombination } = calculateBestBundles(vpNeeded);
 	const groupedBundles = groupBundles(bestCombination);
 
+    // React ensures the UI re-renders when `vpNeeded` or calculations change.
 	return (
 		<div className="bundle-suggestion">
 			<h2>Suggested Bundles</h2>

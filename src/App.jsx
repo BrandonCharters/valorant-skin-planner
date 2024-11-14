@@ -11,11 +11,14 @@ import BundleSuggestion from './components/BundleSuggestion';
 // It initializes and manages the app's primary state.
 
 export default function App() {
-	const [currentVP, setCurrentVP] = useState(0);
-	const [selectedSkins, setSelectedSkins] = useState([]);
+  // React's `useState` enables centralized state management.
+	const [currentVP, setCurrentVP] = useState(0); // Tracks the user's current VP balance.
+	const [selectedSkins, setSelectedSkins] = useState([]); // Tracks skins selected by the user.
 
+  // Calculates the total VP cost dynamically based on selected skins.
 	const totalVP = selectedSkins.reduce((sum, skin) => sum + skin.cost, 0);
 
+  // React's declarative rendering ensures all child components automatically update when state changes.
 	return (
 		<div className="app">
 			<Header />
