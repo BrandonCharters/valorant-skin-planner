@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import '../Styles/VPInput.css'
+import VPIcon from './VPIcon';
 
 export default function VPInput({ currentVP, setCurrentVP }) {
 	return (
 		<div className="vp-input-container">
-			<h2>Current VP</h2>
+			<h2>Current VP <VPIcon/></h2>
 			<input
 				type="text"
 				className="vp-input"

@@ -1,0 +1,21 @@
+.vp-icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #5B6269;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.vp-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.vp-input-container {
+    margin-bottom: 1rem;
+}
