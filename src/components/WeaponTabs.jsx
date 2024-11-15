@@ -1,77 +1,41 @@
-import { skinsData } from '../data';
+import { weapons } from '../data/data';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { FixedSizeList as List } from 'react-window';
+import '../Styles/WeaponTabs.css';
+import SkinList from './SkinList';
+
+// This component displays a list of weapons as tabs.
 
 export default function WeaponTabs({ onSkinSelect }) {
-    const [activeWeapon, setActiveWeapon] = useState(Object.keys(skinsData)[0]);
-    const [selectedSkins, setSelectedSkins] = useState(new Set());
+	// Local state for the active weapon ID.
+	const [activeWeaponId, setActiveWeaponId] = useState(weapons[0].id);
 
-    const handleSkinToggle = (skin) => {
-        const updatedSkins = new Set(selectedSkins);
-        if (updatedSkins.has(skin)) {
-            updatedSkins.delete(skin);
-        } else {
-            updatedSkins.add(skin);
-        }
-        setSelectedSkins(updatedSkins);
-        onSkinSelect(Array.from(updatedSkins));
-    };
-
-    const skins = skinsData[activeWeapon].skins;
-
-    return (
-        <div>
-            <h2>Weapons</h2>
-            <div className="tabs">
-                {Object.keys(skinsData).map((weapon) => (
-                    <button
-                        key={weapon}
-                        className={`tab-button ${activeWeapon === weapon ? 'active' : ''}`}
-                        onClick={() => setActiveWeapon(weapon)}
-                    >
-                        <div className="tab-content">
-                            <h3>{weapon}</h3>
-                            <img
-                                src={skinsData[weapon].image}
-                                alt={`${weapon} base`}
-                                className="weapon-image"
-                            />
-                        </div>
-                    </button>
-                ))}
-            </div>
-
-            <List
-                className="weapon-list-container"
-                height={400}
-                itemCount={skins.length}
-                itemSize={70} // Adjusted to give more space for styled buttons
-                width="100%"
-            >
-                {({ index, style }) => {
-                    const skin = skins[index];
-                    const isSelected = selectedSkins.has(skin);
-
-                    return (
-                        <button
-                            key={skin.id}
-                            style={style}
-                            className={`skin-button ${isSelected ? 'selected' : ''}`}
-                            onClick={() => handleSkinToggle(skin)}
-                        >
-                            <div className="skin-content">
-                                <h3>{skin.name}</h3>
-                                <p>{skin.cost} VP</p>
-                            </div>
-                        </button>
-                    );
-                }}
-            </List>
-        </div>
-    );
+	return (
+		<div>
+			<h2>Weapons</h2>
+			<div className="tabs">
+				{weapons.map((weapon) => (
+					<button
+						key={weapon.id}
+						className={activeWeaponId === weapon.id ? 'active' : ''}
+						onClick={() => setActiveWeaponId(weapon.id)}
+					>
+						<div className="tab-content">
+							<h3>{weapon.name}</h3>
+							<img
+								src={weapon.image}
+								alt={`${weapon.name} base`}
+								className="weapon-image"
+							/>
+						</div>
+					</button>
+				))}
+			</div>
+			<SkinList activeWeaponId={activeWeaponId} onSkinSelect={onSkinSelect} />
+		</div>
+	);
 }
 
 WeaponTabs.propTypes = {
-    onSkinSelect: PropTypes.func.isRequired,
+	onSkinSelect: PropTypes.func.isRequired,
 };
