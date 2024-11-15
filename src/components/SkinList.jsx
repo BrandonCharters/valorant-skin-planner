@@ -1,4 +1,4 @@
-import { skins } from '../data';
+import { skins } from '../data/data';
 import { useState } from 'react';
 import { FixedSizeList as List } from 'react-window';
 import PropTypes from 'prop-types';

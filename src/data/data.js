@@ -1,12 +1,14 @@
-import VandalBase from './assets/VandalBase.png';
-import PhantomBase from './assets/PhantomBase.png';
-import OperatorBase from './assets/OperatorBase.png';
+import VandalBase from '../assets/VandalBase.png';
+import PhantomBase from '../assets/PhantomBase.png';
+import OperatorBase from '../assets/OperatorBase.png';
+import BulldogBase from '../assets/BulldogBase.png';
 
 // Weapons
 export const weapons = [
     { id: 1, name: "Vandal", image: VandalBase },
     { id: 2, name: "Phantom", image: PhantomBase },
     { id: 3, name: "Operator", image: OperatorBase },
+    { id: 4, name: "Bulldog", image: BulldogBase },
 ];
 
 // Skins
@@ -154,7 +156,29 @@ export const skins = [
     { id: 142, weaponId: 3, name: "Endeavour Operator", cost: 875 },
     { id: 143, weaponId: 3, name: "Infantry Operator", cost: 875 },
     { id: 144, weaponId: 3, name: "Intergrade Operator", cost: 875 },
-    { id: 145, weaponId: 3, name: "Luxe Operator", cost: 875 }
+    { id: 145, weaponId: 3, name: "Luxe Operator", cost: 875 },
+    { id: 146, weaponId: 4, name: "Protocol 781-A Bulldog", cost: 2475 },
+    { id: 147, weaponId: 4, name: "Radiant Entertainment System Bulldog", cost: 2975 },
+    { id: 148, weaponId: 4, name: "Araxys Bulldog", cost: 2175 },
+    { id: 149, weaponId: 4, name: "Glitchpop Bulldog", cost: 2175 },
+    { id: 150, weaponId: 4, name: "Nocturnum Bulldog", cost: 2175 },
+    { id: 151, weaponId: 4, name: "Spectrum Bulldog", cost: 2675 },
+    { id: 152, weaponId: 4, name: "Aemondir Bulldog", cost: 1775 },
+    { id: 153, weaponId: 4, name: "Black.Market Bulldog", cost: 1775 },
+    { id: 154, weaponId: 4, name: "Cryostasis Bulldog", cost: 1775 },
+    { id: 155, weaponId: 4, name: "Oni Bulldog", cost: 1775 },
+    { id: 156, weaponId: 4, name: "Undercity Bulldog", cost: 1775 },
+    { id: 157, weaponId: 4, name: "Aperture Bulldog", cost: 1275 },
+    { id: 158, weaponId: 4, name: "Aristocrat Bulldog", cost: 1275 },
+    { id: 159, weaponId: 4, name: "Chromedek Bulldog", cost: 1275 },
+    { id: 160, weaponId: 4, name: "Emberclad Bulldog", cost: 1275 },
+    { id: 161, weaponId: 4, name: "Holomoku Bulldog", cost: 1275 },
+    { id: 162, weaponId: 4, name: "Horizon Bulldog", cost: 1275 },
+    { id: 163, weaponId: 4, name: "NO LIMITS Bulldog", cost: 1275 },
+    { id: 164, weaponId: 4, name: "Nunca Olvidados Bulldog", cost: 1275 },
+    { id: 165, weaponId: 4, name: "Convex Bulldog", cost: 875 },
+    { id: 166, weaponId: 4, name: "Endeavour Bulldog", cost: 875 },
+    { id: 167, weaponId: 4, name: "Rush Bulldog", cost: 875 },
 ];
 
 // Bundles

@@ -1,4 +1,4 @@
-import { bundles } from '../data';
+import { bundles } from '../data/data';
 import PropTypes from 'prop-types';
 import BundleDisplay from './BundleDisplay';
 import '../Styles/BundleSuggestion.css';

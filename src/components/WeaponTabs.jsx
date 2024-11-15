@@ -1,4 +1,4 @@
-import { weapons } from '../data';
+import { weapons } from '../data/data';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../Styles/WeaponTabs.css';
