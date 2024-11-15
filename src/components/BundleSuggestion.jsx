@@ -1,6 +1,7 @@
 import { bundles } from '../data';
 import PropTypes from 'prop-types';
-import '../Styles/BundleSuggestion.css'
+import BundleDisplay from './BundleDisplay';
+import '../Styles/BundleSuggestion.css';
 
 // This component calculates and displays the best bundles to meet the VP requirement.
 
@@ -11,11 +12,11 @@ export default function BundleSuggestion({ totalVP, currentVP }) {
 
     // Encapsulated logic for calculating the best bundles (reusable and testable).
 	const calculateBestBundles = (vpNeeded) => {
-		const memo = {}; // React benefits by allowing local memoization, reducing recalculations.
+		const memo = {};
 
 		const findCombination = (remainingVP) => {
 			if (remainingVP <= 0) return { cost: 0, bundles: [] };
-			if (memo[remainingVP]) return memo[remainingVP]; // Use memoized result if available.
+			if (memo[remainingVP]) return memo[remainingVP];
 
 			let minCost = Infinity;
 			let bestCombination = [];
@@ -39,7 +40,7 @@ export default function BundleSuggestion({ totalVP, currentVP }) {
 		// Start calculation from the exact VP needed.
 		const result = findCombination(vpNeeded);
 		return {
-			minCost: isFinite(result.cost) ? result.cost : 0, // Fallback to 0 cost if no bundles are found.
+			minCost: isFinite(result.cost) ? result.cost : 0,
 			bestCombination: result.bundles,
 		};
 	};
@@ -67,13 +68,10 @@ export default function BundleSuggestion({ totalVP, currentVP }) {
 			{vpNeeded > 0 ? (
 				<div>
 					<p>Best Cost: ${minCost.toFixed(2)}</p>
-					<ul>
-						{groupedBundles.map((bundle) => (
-							<li key={bundle.id}>
-								{bundle.totalVP} VP bundle for ${bundle.cost} x{bundle.count}
-							</li>
-						))}
-					</ul>
+					<BundleDisplay
+						bundles={bundles}
+						highlightedBundles={groupedBundles}
+					/>
 				</div>
 			) : (
 				<p>You have enough VP!</p>

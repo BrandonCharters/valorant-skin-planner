@@ -24,7 +24,7 @@ export default function App() {
 			<Header />
 			<VPInput currentVP={currentVP} setCurrentVP={setCurrentVP} />
 			<WeaponTabs onSkinSelect={setSelectedSkins} />
-			<TotalVP selectedSkins={selectedSkins} />
+			<TotalVP selectedSkins={selectedSkins} currentVP={currentVP}/>
 			<BundleSuggestion totalVP={totalVP} currentVP={currentVP} />
 		</div>
 	);
