@@ -1,0 +1,17 @@
+.skin-list-filter {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.skin-list-filter label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.skin-list-filter select {
+    padding: 5px 10px;
+    border: 1px solid #fd4556;
+    border-radius: 5px;
+    font-size: 14px;
+}
