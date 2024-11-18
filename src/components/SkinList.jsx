@@ -4,6 +4,7 @@ import { FixedSizeList as List } from 'react-window';
 import PropTypes from 'prop-types';
 import SkinListFilter from './SkinListFilter';
 import '../Styles/WeaponTabs.css';
+import '../Styles/Skins.css';
 
 // This component displays the list of skins for a selected weapon.
 export default function SkinList({ activeWeaponId, onSkinSelect }) {

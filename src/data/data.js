@@ -6,11 +6,11 @@ import BulldogBase from '../assets/BulldogBase.png';
 
 // Weapons
 export const weapons = [
-    { id: 1, name: "Vandal", image: VandalBase },
-    { id: 2, name: "Phantom", image: PhantomBase },
-    { id: 3, name: "Operator", image: OperatorBase },
-    { id: 4, name: "Bulldog", image: BulldogBase },
-    // { id: 5, name: "Judge", image: JudgeBase },
+    { id: 1, name: "Vandal", image: VandalBase, type: "Rifles" },
+    { id: 2, name: "Phantom", image: PhantomBase, type: "Rifles" },
+    { id: 3, name: "Operator", image: OperatorBase, type: "Snipers" },
+    { id: 4, name: "Bulldog", image: BulldogBase, type: "Rifles" },
+    // { id: 5, name: "Judge", image: JudgeBase, type: "Shotguns" },
 ];
 
 // Skins

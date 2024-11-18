@@ -2,6 +2,7 @@ import { weapons } from '../data/data';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../Styles/WeaponTabs.css';
+import '../Styles/Skins.css';
 import SkinList from './SkinList';
 
 // This component displays a list of weapons as tabs.

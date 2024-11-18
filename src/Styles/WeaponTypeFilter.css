@@ -1,0 +1,30 @@
+.weapon-type-filter {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.filter-buttons button {
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.filter-buttons button:hover {
+    border-color: #fd4556;
+    color: #fd4556;
+}
+
+.filter-buttons button.active {
+    background-color: #fd4556;
+    color: white;
+    border-color: #fd4556;
+}
