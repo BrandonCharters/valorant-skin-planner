@@ -2,6 +2,7 @@ import VandalBase from '../assets/VandalBase.png';
 import PhantomBase from '../assets/PhantomBase.png';
 import OperatorBase from '../assets/OperatorBase.png';
 import BulldogBase from '../assets/BulldogBase.png';
+// import JudgeBase from '../assets/JudgeBase.png';
 
 // Weapons
 export const weapons = [
@@ -9,6 +10,7 @@ export const weapons = [
     { id: 2, name: "Phantom", image: PhantomBase },
     { id: 3, name: "Operator", image: OperatorBase },
     { id: 4, name: "Bulldog", image: BulldogBase },
+    // { id: 5, name: "Judge", image: JudgeBase },
 ];
 
 // Skins
@@ -179,6 +181,7 @@ export const skins = [
     { id: 165, weaponId: 4, name: "Convex Bulldog", cost: 875 },
     { id: 166, weaponId: 4, name: "Endeavour Bulldog", cost: 875 },
     { id: 167, weaponId: 4, name: "Rush Bulldog", cost: 875 },
+    // { id: 168, weaponId: 5, name: "Mystbloom Classic", cost: 1775 },
 ];
 
 // Bundles
