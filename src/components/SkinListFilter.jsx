@@ -17,8 +17,8 @@ export default function SkinListFilter({ onSort, defaultSort }) {
 					onChange={handleSortChange}
 					defaultValue={defaultSort}
 				>
-					<option value="lowest">Lowest Price</option>
 					<option value="highest">Highest Price</option>
+					<option value="lowest">Lowest Price</option>
 				</select>
 			</div>
 		</div>
@@ -28,8 +28,4 @@ export default function SkinListFilter({ onSort, defaultSort }) {
 SkinListFilter.propTypes = {
 	onSort: PropTypes.func.isRequired, // Required: Function to handle sort logic
 	defaultSort: PropTypes.string, // Optional: Default sort option
-};
-
-SkinListFilter.defaultProps = {
-	defaultSort: 'lowest', // Default to 'lowest' if no default is provided
 };
