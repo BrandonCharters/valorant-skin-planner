@@ -16,7 +16,6 @@
 
 .bundle-block.highlighted {
     border-color: #fd4556;
-    transform: scale(1.05);
     animation: pulse 1.5s infinite;
 }
 

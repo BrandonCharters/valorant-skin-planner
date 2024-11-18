@@ -1,41 +1,32 @@
 import PropTypes from 'prop-types';
-import { weapons } from '../data/data';
 import '../Styles/WeaponTypeFilter.css';
 
-// Extract unique weapon types
-const getWeaponTypes = () => {
-	const types = weapons.map((weapon) => weapon.type);
-	return [...new Set(types)];
-};
-
-export default function WeaponTypeFilter({ selectedType, onTypeSelect }) {
-	const weaponTypes = getWeaponTypes();
-
+export default function WeaponTypeFilter({
+	weaponTypes,
+	selectedType,
+	onTypeChange,
+}) {
 	return (
-		<div className="weapon-type-filter">
-			<h2>Filter by Type</h2>
-			<div className="filter-buttons">
+		<div className="weapon-filter">
+			<h3>Filter by Type:</h3>
+			<select
+				value={selectedType}
+				onChange={(e) => onTypeChange(e.target.value)}
+				className="filter-select"
+			>
+				<option value="All">All</option>
 				{weaponTypes.map((type) => (
-					<button
-						key={type}
-						className={selectedType === type ? 'active' : ''}
-						onClick={() => onTypeSelect(type)}
-					>
+					<option key={type} value={type}>
 						{type}
-					</button>
+					</option>
 				))}
-				<button
-					className={!selectedType ? 'active' : ''}
-					onClick={() => onTypeSelect(null)}
-				>
-					All
-				</button>
-			</div>
+			</select>
 		</div>
 	);
 }
 
 WeaponTypeFilter.propTypes = {
-	selectedType: PropTypes.string,
-	onTypeSelect: PropTypes.func.isRequired,
+	weaponTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
+	selectedType: PropTypes.string.isRequired,
+	onTypeChange: PropTypes.func.isRequired,
 };
