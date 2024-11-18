@@ -13,6 +13,10 @@
 }
 
 /* Style the scrollbar for the List */
+.weapon-list-container{
+    margin: 20px 0;
+}
+
 .weapon-list-container::-webkit-scrollbar {
     width: 8px;
 }

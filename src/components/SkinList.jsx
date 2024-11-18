@@ -38,7 +38,7 @@ export default function SkinList({ activeWeaponId, onSkinSelect }) {
 	}, [filteredSkins, sortOption]);
 
 	return (
-		<div>
+		<>
 			{/* Include the filter and sort component */}
 			<SkinListFilter onSort={setSortOption} defaultSort="highest" />
 
@@ -66,7 +66,7 @@ export default function SkinList({ activeWeaponId, onSkinSelect }) {
 					);
 				}}
 			</List>
-		</div>
+		</>
 	);
 }
 
