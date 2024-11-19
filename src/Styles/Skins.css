@@ -14,6 +14,7 @@
 
 /* Style the scrollbar for the List */
 .weapon-list-container{
+    width: 100%;
     margin: 20px 0;
 }
 
@@ -37,7 +38,7 @@
 
 /* Skin button styling */
 .skin-button {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -48,8 +49,7 @@
 }
 
 .skin-button:hover {
-    background-color: #ffffff;
-    color: #111823;
+    color: #fd4556;
     border-color: #fd4556;
 }
 
