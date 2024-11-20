@@ -1,4 +1,4 @@
-/* skins.css */
+/* Skins.css */
 
 .skins-list {
     margin-top: 10px;
@@ -13,9 +13,11 @@
 }
 
 /* Style the scrollbar for the List */
-.weapon-list-container{
+.weapon-list-container {
     width: 100%;
     margin: 20px 0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 .weapon-list-container::-webkit-scrollbar {
@@ -51,6 +53,7 @@
 .skin-button:hover {
     color: #fd4556;
     border-color: #fd4556;
+    transform: scale(1.05);
 }
 
 .skin-button.selected {
@@ -58,4 +61,5 @@
     color: white;
     font-weight: bold;
     border-color: #fd4556;
+    transform: scale(1.05);
 }

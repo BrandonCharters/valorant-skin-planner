@@ -1,4 +1,4 @@
-/* tabs.css */
+/* WeaponTabs.css */
 
 .tabs {
     display: flex;
@@ -25,12 +25,14 @@
 .tabs button:hover {
     border-color: #fd4556;
     color: #fd4556;
+    transform: scale(1.05);
 }
 
 .tabs button.active {
     border-color: #fd4556;
     color: #fd4556;
     font-weight: bold;
+    transform: scale(1.05);
 }
 
 .tab-content {
