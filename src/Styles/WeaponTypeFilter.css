@@ -1,0 +1,22 @@
+/* WeaponTypeFilter.css */
+
+.weapon-filter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.filter-select {
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #fd4556;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-select:focus {
+    border-color: #ff6b77;
+    box-shadow: 0 0 15px rgba(253, 69, 86, 0.7);
+    animation: glow 1.5s infinite alternate;
+}

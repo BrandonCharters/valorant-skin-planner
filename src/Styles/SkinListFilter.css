@@ -1,7 +1,9 @@
+/* SkinListFilter.css */
+
 .skin-list-filter {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 10px;
+    margin: 20px 0;
 }
 
 .skin-list-filter label {
@@ -11,7 +13,13 @@
 
 .skin-list-filter select {
     padding: 5px 10px;
-    border: 1px solid #fd4556;
+    border: 2px solid #fd4556;
     border-radius: 5px;
     font-size: 14px;
+}
+
+.skin-list-filter select:focus {
+    border-color: #ff6b77;
+    box-shadow: 0 0 15px rgba(253, 69, 86, 0.7);
+    animation: glow 1.5s infinite alternate;
 }

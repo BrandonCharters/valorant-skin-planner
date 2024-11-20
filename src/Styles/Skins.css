@@ -1,0 +1,72 @@
+/* Skins.css */
+
+.skins-list {
+    margin-top: 10px;
+}
+
+/* Style the scrollbar for the List */
+.weapon-list-container {
+    width: 100%;
+    margin: 20px 0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.weapon-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.weapon-list-container::-webkit-scrollbar-thumb {
+    background: #fd4556;
+    border-radius: 5px;
+}
+
+.weapon-list-container::-webkit-scrollbar-thumb:hover {
+    background: #ff6b77;
+}
+
+.weapon-list-container::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border-radius: 5px;
+}
+
+/* Skin button styling */
+.skin-button {
+    width: 95%;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.skin-button:hover {
+    color: #fd4556;
+    border-color: #fd4556;
+    transform: scale(1.05);
+}
+
+.skin-button.selected {
+    background-color: #fd4556;
+    color: white;
+    font-weight: bold;
+    border-color: #fd4556;
+    transform: scale(1.05);
+}
+
+.no-skins-message {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.message-container {
+    margin: 20px 0;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    border-color: #fd4556;
+    color: #fd4556;
+}

@@ -1,6 +1,4 @@
-.skins-list {
-    margin-top: 10px;
-}
+/* WeaponTabs.css */
 
 .tabs {
     display: flex;
@@ -11,9 +9,7 @@
 
 .tabs button {
     flex: 1;
-    /* Make all buttons grow equally */
     max-width: 200px;
-    /* Prevent the buttons from growing indefinitely */
     padding: 10px 10px;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -23,85 +19,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center text and image */
     justify-content: space-between;
-    /* Space out the text and image */
 }
 
 .tabs button:hover {
     border-color: #fd4556;
     color: #fd4556;
+    transform: scale(1.05);
 }
 
 .tabs button.active {
     border-color: #fd4556;
     color: #fd4556;
     font-weight: bold;
+    transform: scale(1.05);
 }
 
 .tab-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.tab-weapon-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .weapon-image {
     max-width: 100%;
-    /* Allow the image to scale within its container */
     max-height: 100px;
-    /* Define a max height to maintain consistency */
     object-fit: contain;
-    /* Ensure the aspect ratio is maintained */
+    border-radius: 5px;
+}
+
+.tab-weapon-name {
     margin-top: 10px;
-    border-radius: 5px;
-}
-
-/* Style the scrollbar for the List */
-.weapon-list-container::-webkit-scrollbar {
-    width: 8px;
-    /* Width of the scrollbar */
-}
-
-.weapon-list-container::-webkit-scrollbar-thumb {
-    background: #fd4556;
-    /* Color of the scrollbar thumb */
-    border-radius: 5px;
-    /* Rounded corners for the thumb */
-}
-
-.weapon-list-container::-webkit-scrollbar-thumb:hover {
-    background: #ff6b77;
-    /* Color when hovering over the scrollbar thumb */
-}
-
-.weapon-list-container::-webkit-scrollbar-track {
-    background: #f4f4f4;
-    /* Background of the scrollbar track */
-    border-radius: 5px;
-    /* Rounded corners for the track */
-}
-
-/* Skin button styling */
-.skin-button {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.skin-button:hover {
-    background-color: #ffffff;
-    color: #111823;
-    border-color: #fd4556;
-}
-
-.skin-button.selected {
-    background-color: #fd4556;
-    color: white;
-    font-weight: bold;
-    border-color: #fd4556;
 }

@@ -1,4 +1,9 @@
-/* Style for BundleSuggestion list */
+/* BundleSuggestion.css */
+
+.bundle-suggestion {
+    margin: 20px 0;
+}
+
 .bundle-suggestion ul {
     list-style: none;
     padding: 0;

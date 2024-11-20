@@ -1,3 +1,5 @@
+/* BundleDisplay.css */
+
 .bundle-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -14,22 +16,13 @@
     transition: transform 0.2s ease;
 }
 
-.bundle-block.highlighted {
-    border-color: #fd4556;
-    transform: scale(1.05);
-    animation: pulse 1.5s infinite;
+.bundle-block:hover {
+    transform: translateY(-5px);
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(253, 69, 86, 0.4);
-    }
-    50% {
-        box-shadow: 0 0 10px 10px rgba(253, 69, 86, 0.2);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(253, 69, 86, 0);
-    }
+.bundle-block.highlighted {
+    border-color: #fd4556;
+    animation: pulse 1.5s infinite;
 }
 
 .bundle-cost {

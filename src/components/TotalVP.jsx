@@ -8,7 +8,7 @@ export default function TotalVP({ selectedSkins, currentVP }) {
 	const trueTotalVPNeeded = Math.max(totalSkinCost - currentVP, 0); // Ensure it doesn't go negative.
 
 	return (
-		<div>
+		<div className='total-vp-container'>
 			<h2>Total VP <VPIcon/></h2>
 			<p>{trueTotalVPNeeded} VP</p>
 		</div>
