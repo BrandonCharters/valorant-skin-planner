@@ -1,16 +1,44 @@
-import VandalBase from '../assets/VandalBase.png';
-import PhantomBase from '../assets/PhantomBase.png';
-import OperatorBase from '../assets/OperatorBase.png';
-import BulldogBase from '../assets/BulldogBase.png';
-// import JudgeBase from '../assets/JudgeBase.png';
+import VandalIcon from '../assets/VandalIcon.png';
+import PhantomIcon from '../assets/PhantomIcon.png';
+import OperatorIcon from '../assets/OperatorIcon.png';
+import BulldogIcon from '../assets/BulldogIcon.png';
+import GuardianIcon from '../assets/GuardianIcon.png';
+import AresIcon from '../assets/AresIcon.png';
+import BuckyIcon from '../assets/BuckyIcon.png';
+import ClassicIcon from '../assets/ClassicIcon.png';
+import FrenzyIcon from '../assets/FrenzyIcon.png';
+import GhostIcon from '../assets/GhostIcon.png';
+import JudgeIcon from '../assets/JudgeIcon.png';
+import MeleeIcon from '../assets/MeleeIcon.png';
+import MarshalIcon from '../assets/MarshalIcon.png';
+import OdinIcon from '../assets/OdinIcon.png';
+import OutlawIcon from '../assets/OutlawIcon.png';
+import SheriffIcon from '../assets/SheriffIcon.png';
+import ShortyIcon from '../assets/ShortyIcon.png';
+import SpectreIcon from '../assets/SpectreIcon.png';
+import StingerIcon from '../assets/StingerIcon.png';
 
 // Weapons
 export const weapons = [
-    { id: 1, name: "Vandal", image: VandalBase, type: "Rifles" },
-    { id: 2, name: "Phantom", image: PhantomBase, type: "Rifles" },
-    { id: 3, name: "Operator", image: OperatorBase, type: "Snipers" },
-    { id: 4, name: "Bulldog", image: BulldogBase, type: "Rifles" },
-    // { id: 5, name: "Judge", image: JudgeBase, type: "Shotguns" },
+    { id: 1, name: "Vandal", type: "Rifle", image: VandalIcon },
+    { id: 2, name: "Phantom", type: "Rifle", image: PhantomIcon },
+    { id: 3, name: "Operator", type: "Sniper", image: OperatorIcon },
+    { id: 4, name: "Bulldog", type: "Rifle", image: BulldogIcon },
+    { id: 5, name: "Guardian", type: "Rifle", image: GuardianIcon },
+    { id: 6, name: "Ares", type: "Heavy", image: AresIcon },
+    { id: 7, name: "Bucky", type: "Shotgun", image: BuckyIcon },
+    { id: 8, name: "Classic", type: "Pistol", image: ClassicIcon },
+    { id: 9, name: "Frenzy", type: "Pistol", image: FrenzyIcon },
+    { id: 10, name: "Ghost", type: "Pistol", image: GhostIcon },
+    { id: 11, name: "Judge", type: "Shotgun", image: JudgeIcon },
+    { id: 12, name: "Knife", type: "Melee", image: MeleeIcon },
+    { id: 13, name: "Marshal", type: "Sniper", image: MarshalIcon },
+    { id: 14, name: "Odin", type: "Heavy", image: OdinIcon },
+    { id: 15, name: "Outlaw", type: "Sniper", image: OutlawIcon },
+    { id: 16, name: "Sheriff", type: "Pistol", image: SheriffIcon },
+    { id: 17, name: "Shorty", type: "Pistol", image: ShortyIcon },
+    { id: 18, name: "Spectre", type: "SMG", image: SpectreIcon },
+    { id: 19, name: "Stinger", type: "SMG", image: StingerIcon },
 ];
 
 // Skins

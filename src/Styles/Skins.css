@@ -4,14 +4,6 @@
     margin-top: 10px;
 }
 
-.weapon-image {
-    max-width: 100%;
-    max-height: 100px;
-    object-fit: contain;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
 /* Style the scrollbar for the List */
 .weapon-list-container {
     width: 100%;
