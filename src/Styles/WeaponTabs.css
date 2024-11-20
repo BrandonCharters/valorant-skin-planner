@@ -48,3 +48,13 @@
     flex-direction: column;
     align-items: center;
 }
+
+.tab-weapon-image {
+    margin-bottom: 10px;
+}
+
+.tab-weapon-name h3 {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}

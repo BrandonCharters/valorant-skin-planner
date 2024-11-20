@@ -55,3 +55,18 @@
     border-color: #fd4556;
     transform: scale(1.05);
 }
+
+.no-skins-message {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.message-container {
+    margin: 20px 0;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    border-color: #fd4556;
+    color: #fd4556;
+}

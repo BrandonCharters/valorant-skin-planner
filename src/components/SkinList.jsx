@@ -42,30 +42,38 @@ export default function SkinList({ activeWeaponId, onSkinSelect }) {
 			{/* Include the filter and sort component */}
 			<SkinListFilter onSort={setSortOption} defaultSort="highest" />
 
-			{/* Render the sorted and filtered list */}
-			<List
-				className="weapon-list-container"
-				height={400}
-				itemCount={sortedSkins.length}
-				itemSize={50}
-				width="100%"
-			>
-				{({ index, style }) => {
-					const skin = sortedSkins[index];
-					return (
-						<div key={skin.id} style={style}>
-							<button
-								className={`skin-button ${
-									selectedSkins.has(skin) ? 'selected' : ''
-								}`}
-								onClick={() => handleSkinSelect(skin)}
-							>
-								{skin.name} - {skin.cost} VP
-							</button>
-						</div>
-					);
-				}}
-			</List>
+			{/* Check if there are any skins to display */}
+			{filteredSkins.length === 0 ? (
+				<div className="message-container">
+					<p className="no-skins-message">
+						No skins available for this weapon.
+					</p>
+				</div>
+			) : (
+				<List
+					className="weapon-list-container"
+					height={400}
+					itemCount={sortedSkins.length}
+					itemSize={50}
+					width="100%"
+				>
+					{({ index, style }) => {
+						const skin = sortedSkins[index];
+						return (
+							<div key={skin.id} style={style}>
+								<button
+									className={`skin-button ${
+										selectedSkins.has(skin) ? 'selected' : ''
+									}`}
+									onClick={() => handleSkinSelect(skin)}
+								>
+									{skin.name} - {skin.cost} VP
+								</button>
+							</div>
+						);
+					}}
+				</List>
+			)}
 		</>
 	);
 }

@@ -14,7 +14,6 @@ export default function WeaponTypeFilter({
 				onChange={(e) => onTypeChange(e.target.value)}
 				className="filter-select"
 			>
-				<option value="All">All</option>
 				{weaponTypes.map((type) => (
 					<option key={type} value={type}>
 						{type}

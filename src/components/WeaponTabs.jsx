@@ -7,15 +7,15 @@ import SkinList from './SkinList';
 import WeaponTypeFilter from './WeaponTypeFilter';
 
 export default function WeaponTabs({ onSkinSelect }) {
-	const [activeWeaponId, setActiveWeaponId] = useState(weapons[0].id);
-	const [selectedType, setSelectedType] = useState('All');
-
 	// Get unique weapon types
 	const weaponTypes = [...new Set(weapons.map((weapon) => weapon.type))];
 
+	const [activeWeaponId, setActiveWeaponId] = useState(weapons[0].id);
+	const [selectedType, setSelectedType] = useState(weaponTypes[0]);
+
 	// Filter weapons based on the selected type
 	const filteredWeapons = weapons.filter(
-		(weapon) => selectedType === 'All' || weapon.type === selectedType
+		(weapon) => weapon.type === selectedType
 	);
 
 	return (
@@ -34,12 +34,16 @@ export default function WeaponTabs({ onSkinSelect }) {
 						onClick={() => setActiveWeaponId(weapon.id)}
 					>
 						<div className="tab-content">
-							<h3>{weapon.name}</h3>
-							<img
-								src={weapon.image}
-								alt={`${weapon.name} base`}
-								className="weapon-image"
-							/>
+							<div className="tab-weapon-image">
+								<img
+									src={weapon.image}
+									alt={`${weapon.name} base`}
+									className="weapon-image"
+								/>
+							</div>
+							<div className="tab-weapon-name">
+								<h3>{weapon.name}</h3>
+							</div>
 						</div>
 					</button>
 				))}
