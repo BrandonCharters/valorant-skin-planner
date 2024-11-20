@@ -65,8 +65,7 @@
 
 .message-container {
     margin: 20px 0;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    border-color: #fd4556;
     color: #fd4556;
+    border: 2px solid #fd4556;
+    border-radius: 5px;
 }
