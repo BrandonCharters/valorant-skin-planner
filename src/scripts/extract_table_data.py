@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 import os
 
-# List of weapon names to construct URLs
+# List of weapon names to construct URLs (Melee removed)
 weapon_names = [
     "Classic",
     "Shorty",
@@ -23,7 +23,6 @@ weapon_names = [
     "Outlaw",
     "Ares",
     "Odin",
-    "Melee",  # Include Melee
 ]
 
 # Base URL structure
@@ -57,89 +56,46 @@ for weapon in weapon_names:
     rows = table.select("tbody tr")
     csv_data = []
 
-    # Different logic for Melee table
-    if weapon == "Melee":
-        headers = [
-            "Skin Image",
-            "Skin Collection",
-            "Skin Name",
-            "Skin Cost",
-            "Skin Weapon",
-        ]
-        csv_data.append(headers)
+    headers = [
+        "Skin Image",
+        "Skin Name",
+        "Skin Edition",
+        "Skin Collection",
+        "Skin Cost",
+        "Skin Weapon",
+    ]
+    csv_data.append(headers)
 
-        for row in rows:
-            cells = row.find_all("td")
-            if not cells or len(cells) < 4:
-                continue
+    for row in rows:
+        cells = row.find_all("td")
+        if not cells or len(cells) < 5:
+            continue
 
-            # Check if there's a rowspan to update the collection
-            if cells[1].has_attr("rowspan"):
-                current_collection = (
-                    cells[1].a.text if cells[1].a else current_collection
-                )
-            elif (
-                len(cells) > 1 and cells[1].a
-            ):  # Update collection if directly provided
-                current_collection = cells[1].a.text
+        # Extract data
+        skin_image = cells[0].a["href"] if cells[0].a else ""
+        skin_name = cells[0].img["alt"] if cells[0].img else ""
+        skin_edition = cells[1].img["alt"] if cells[1].img else ""
+        skin_collection = cells[2].a.text if cells[2].a else ""
+        skin_cost = (
+            cells[3]
+            .get_text(strip=True)
+            .split(";")[-1]
+            .replace("\xa0", "")
+            .replace(",", "")
+        )
+        skin_weapon = skin_name.split()[-1] if skin_name else ""
 
-            # Extract data
-            skin_image = cells[0].a["href"] if cells[0].a else ""
-            skin_name = cells[2].get_text(strip=True)
-            skin_cost = (
-                cells[3]
-                .get_text(strip=True)
-                .split(";")[-1]
-                .replace("\xa0", "")
-                .replace(",", "")
-            )
-            skin_weapon = "Melee"
-
-            # Append data with the current collection
-            csv_data.append(
-                [skin_image, current_collection, skin_name, skin_cost, skin_weapon]
-            )
-    else:
-        headers = [
-            "Skin Image",
-            "Skin Name",
-            "Skin Edition",
-            "Skin Collection",
-            "Skin Cost",
-            "Skin Weapon",
-        ]
-        csv_data.append(headers)
-
-        for row in rows:
-            cells = row.find_all("td")
-            if not cells or len(cells) < 5:
-                continue
-
-            # Extract data
-            skin_image = cells[0].a["href"] if cells[0].a else ""
-            skin_name = cells[0].img["alt"] if cells[0].img else ""
-            skin_edition = cells[1].img["alt"] if cells[1].img else ""
-            skin_collection = cells[2].a.text if cells[2].a else ""
-            skin_cost = (
-                cells[3]
-                .get_text(strip=True)
-                .split(";")[-1]
-                .replace("\xa0", "")
-                .replace(",", "")
-            )
-            skin_weapon = skin_name.split()[-1] if skin_name else ""
-
-            # Append to CSV data
-            csv_data.append(
-                [
-                    skin_image,
-                    skin_name,
-                    skin_edition,
-                    skin_collection,
-                    skin_cost,
-                    skin_weapon,
-                ]
-            )
+        # Append to CSV data
+        csv_data.append(
+            [
+                skin_image,
+                skin_name,
+                skin_edition,
+                skin_collection,
+                skin_cost,
+                skin_weapon,
+            ]
+        )
 
     # Save the data for the weapon to a CSV file
     csv_file_path = os.path.join(data_folder, f"{weapon}_Skins.csv")
