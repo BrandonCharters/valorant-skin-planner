@@ -1,21 +1,9 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
 .app {
   text-align: center;
-  max-width: 800px;
-  width: 100%;
+  max-width: 1000px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px #fd4556;
+  box-shadow: 0 0 15px rgba(253, 69, 86, 0.7);
   margin: 20px;
 }
 
@@ -23,91 +11,52 @@ header {
   margin-bottom: 20px;
 }
 
-.tabs {
+h1,
+h2,
+h3 {
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.skins-list {
-  margin-top: 10px;
-}
-
-/* Style for BundleSuggestion list */
-.bundle-suggestion ul {
-  list-style: none;
-  padding: 0;
-}
-
-.bundle-suggestion li {
-  margin-bottom: 10px;
-}
-
-.tabs {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.tabs button {
-  flex: 1; /* Make all buttons grow equally */
-  max-width: 200px; /* Prevent the buttons from growing indefinitely */
-  padding: 10px 10px;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: border-color 0.3s ease, color 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center text and image */
-  justify-content: space-between; /* Space out the text and image */
-}
-
-.tabs button:hover {
-  border-color: #fd4556;
-  color: #fd4556;
-}
-
-.tabs button.active {
-  border-color: #fd4556;
-  color: #fd4556;
-  font-weight: bold;
-}
-
-.tab-content {
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  margin: 10px;
+  justify-content: center;
+  font-family: 'ValorantHeaderFont';
 }
 
-.weapon-image {
-  max-width: 100%; /* Allow the image to scale within its container */
-  max-height: 100px; /* Define a max height to maintain consistency */
-  object-fit: contain; /* Ensure the aspect ratio is maintained */
-  margin-top: 10px;
-  border-radius: 5px;
+p {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  justify-content: center;
 }
 
-/* Style the scrollbar for the List */
-.weapon-list-container::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
+.tabs button,
+.skin-button,
+.bundle-block,
+.vp-input,
+.filter-select,
+.skin-list-filter select {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.weapon-list-container::-webkit-scrollbar-thumb {
-  background: #fd4556; /* Color of the scrollbar thumb */
-  border-radius: 5px; /* Rounded corners for the thumb */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(253, 69, 86, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 15px rgba(253, 69, 86, 0.9);
+  }
 }
 
-.weapon-list-container::-webkit-scrollbar-thumb:hover {
-  background: #ff6b77; /* Color when hovering over the scrollbar thumb */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(253, 69, 86, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 10px 10px rgba(253, 69, 86, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 69, 86, 0);
+  }
 }
-
-.weapon-list-container::-webkit-scrollbar-track {
-  background: #f4f4f4; /* Background of the scrollbar track */
-  border-radius: 5px; /* Rounded corners for the track */
-}
-
-
-

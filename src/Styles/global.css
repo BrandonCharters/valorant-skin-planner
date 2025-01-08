@@ -1,0 +1,19 @@
+/* Global.css */
+
+@font-face {
+    font-family: 'ValorantHeaderFont';
+    src: url('../assets/fonts/ValorantFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

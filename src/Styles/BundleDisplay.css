@@ -1,0 +1,59 @@
+/* BundleDisplay.css */
+
+.bundle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+    margin-top: 16px;
+}
+
+.bundle-block {
+    border: 3px solid #f4f4f4;
+    padding: 16px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.bundle-block:hover {
+    transform: translateY(-5px);
+}
+
+.bundle-block.highlighted {
+    border-color: #fd4556;
+    animation: pulse 1.5s infinite;
+}
+
+.bundle-cost {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-weight: bold;
+}
+
+.bundle-content {
+    margin: 16px 0;
+}
+
+.total-vp {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.bundle-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-top: 12px;
+}
+
+.bundle-multiplier {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fd4556;
+}

@@ -1,0 +1,14 @@
+/* BundleSuggestion.css */
+
+.bundle-suggestion {
+    margin: 20px 0;
+}
+
+.bundle-suggestion ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bundle-suggestion li {
+    margin-bottom: 10px;
+}

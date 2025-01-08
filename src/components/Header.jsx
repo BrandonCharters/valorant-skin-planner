@@ -1,3 +1,7 @@
+import '../Styles/Header.css';
+
+// The header component displays the app's title and a brief description.
+
 export default function Header() {
 	return (
 		<header>
